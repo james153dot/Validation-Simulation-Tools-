@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.12)
+project(mech_validate CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(validate_mech validate_mech.cpp)
+find_package(OpenMP)
+if(OpenMP_CXX_FOUND)
+target_link_libraries(validate_mech PUBLIC OpenMP::OpenMP_CXX)
+endif()
